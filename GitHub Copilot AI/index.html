@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Smart Habit Tracker - Build better habits efficiently" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>Smart Habit Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">Habits</h1>
+                <p class="app-tagline">Track daily habits and build consistency</p>
+            </div>
+        </header>
+
+        <!-- Main Container -->
+        <main class="app-main">
+            <!-- Input Section -->
+            <section class="input-section">
+                <form id="habitForm" class="habit-form" novalidate autocomplete="off">
+                    <input type="text" id="habitInput" class="habit-input" placeholder="What habit do you want to build?" maxlength="60" required aria-label="Enter new habit" />
+                    <button type="submit" class="btn-submit" aria-label="Add new habit">
+            <span class="icon">+</span>
+          </button>
+                </form>
+                <div id="inputError" class="error-feedback" role="alert" aria-live="polite"></div>
+            </section>
+
+            <!-- Filter Navigation -->
+            <nav class="filter-nav" role="tablist" aria-label="Filter habits">
+                <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          All
+        </button>
+                <button type="button" class="filter-btn" data-filter="active" role="tab" aria-selected="false">
+          Active
+        </button>
+                <button type="button" class="filter-btn" data-filter="completed" role="tab" aria-selected="false">
+          Completed
+        </button>
+            </nav>
+
+            <!-- Habits List -->
+            <section class="habits-container">
+                <ul id="habitsList" class="habits-list" role="list"></ul>
+                <div id="emptyState" class="empty-state" role="status">
+                    <div class="empty-icon">🌱</div>
+                    <p class="empty-text">No habits yet. Start building good habits today!</p>
+                </div>
+            </section>
+
+            <!-- Stats Dashboard -->
+            <aside class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-value" id="totalHabits">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat-separator"></div>
+                <div class="stat-item">
+                    <span class="stat-value" id="activeHabits">0</span>
+                    <span class="stat-label">Active</span>
+                </div>
+                <div class="stat-separator"></div>
+                <div class="stat-item">
+                    <span class="stat-value" id="completionRate">0%</span>
+                    <span class="stat-label">Done</span>
+                </div>
+            </aside>
+
+            <!-- Action Buttons -->
+            <div class="actions-bar">
+                <button id="clearCompletedBtn" class="btn-secondary" title="Clear completed habits">
+          Clear Completed
+        </button>
+                <button id="exportBtn" class="btn-secondary" title="Export your data">
+          Export
+        </button>
+                <button id="resetBtn" class="btn-danger" title="Reset all data">
+          Reset
+        </button>
+                <input type="file" id="importFile" accept=".json" style="display: none" />
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2024 Smart Habit Tracker. Keep building! 💪</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Habit Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="header">
+            <h1>Smart Habit Tracker</h1>
+            <p class="subtitle">Build consistency. Track progress.</p>
+        </header>
+
+        <!-- Add Habit -->
+        <form id="habitForm" class="habit-form" novalidate>
+            <input id="habitInput" type="text" placeholder="Add a new habit..." autocomplete="off" />
+            <button type="submit">Add</button>
+        </form>
+        <small id="formMessage" class="form-message"></small>
+
+        <!-- Filters -->
+        <div class="filters">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="completed">Completed</button>
+            <button data-filter="pending">Pending</button>
+        </div>
+
+        <!-- Habit List -->
+        <ul id="habitList" class="habit-list"></ul>
+        <div id="emptyState" class="empty-state">
+            <p>No habits yet. Start by adding one ✨</p>
+        </div>
+
+        <!-- Progress -->
+        <section class="progress">
+            <div class="progress-info">
+                <span>Progress</span>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
